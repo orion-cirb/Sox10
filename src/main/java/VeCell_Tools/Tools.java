@@ -741,11 +741,11 @@ public class Tools {
     /**
      * Return population in ROI
      */
-    public Objects3DIntPopulation getPopInRoi(ImagePlus img, ImagePlus imgRaw, Roi roi) throws IOException{
+    public Objects3DIntPopulation getPopInRoi(ImagePlus img, Roi roi) throws IOException{
         ImagePlus imgClear = getImgInRoi(img, roi, 20);
 
         // Filter detections
-        Objects3DIntPopulation pop = new Objects3DIntPopulation(ImageInt.wrap(img));
+        Objects3DIntPopulation pop = new Objects3DIntPopulation(ImageInt.wrap(imgClear));
         popFilterOneZ(pop);
         popFilterCentroid(pop, roi);
         System.out.println(pop.getNbObjects() + " cells detected in ROI");
@@ -1027,9 +1027,7 @@ public class Tools {
     // Get ROI as a 3D object
     public Object3DInt roiMask(ImagePlus img, Roi roi) {
         ImagePlus imgMask = img.duplicate();
-        roi.setLocation(0, 0);
         imgMask.setRoi(roi);
-        
         for (int n = 1; n <= imgMask.getNSlices(); n++) {
             imgMask.setSlice(n);
             IJ.run(imgMask, "Fill", "stack");

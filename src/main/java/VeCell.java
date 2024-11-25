@@ -160,7 +160,7 @@ public class VeCell implements PlugIn {
                     tools.print("- Computing parameters and saving results for ROI " + roi.getName() + " -");
 
                     // Cells channel
-                    Objects3DIntPopulation popCellRoi = tools.getPopInRoi(imgCellMask, imgCell, roi);
+                    Objects3DIntPopulation popCellRoi = tools.getPopInRoi(imgCellMask, roi);
                     
                     // Vessels channel
                     double vesselVolRoi = 0;
