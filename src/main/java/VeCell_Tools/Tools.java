@@ -94,7 +94,7 @@ public class Tools {
     
     public String cellposeEnvDir = IJ.isWindows()? System.getProperty("user.home")+File.separator+"miniconda3"+File.separator+"envs"+File.separator+"CellPose" : "/opt/miniconda3/envs/cellpose";
     public final String cellposeModelDir = IJ.isWindows()? System.getProperty("user.home")+File.separator+".cellpose"+File.separator+"models"+File.separator : "";
-    public String cellposeModel = "cyto_sox9_naomie";
+    public String cellposeModel = "cyto2_sox9_p5-15-60_27-11-24";
     public int cellposeDiam = 20;
     public double cellposeStitchTh = 0.5;
     public double minCellVol = 300; // um3
