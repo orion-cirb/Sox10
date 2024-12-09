@@ -10,7 +10,7 @@
 
 3D images taken on an AxioZoom microscope.
 
-3 channels:
+2 channels:
   1. *DsRed:* Astrocytes (mandatory)
   2. *Cy5:* Vessels (optional)
   
